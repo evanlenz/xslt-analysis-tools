@@ -3,7 +3,7 @@
 
   If I had Carrot, I'd write this:
 
-    $columns             := document{<mode/><match/><priority/><name/>}/*;
+    $columns             := document{<mode/><match/><priority/><name/><as/><visibility/>}/*;
     $header              := `{string-join($columns!('"'||name()||'"'),',')}&#xA;`;
     ^(/)                 := $header, ^row(/*/xsl:template);
     ^row(xsl:template)   := ^cell($columns, .);
@@ -25,6 +25,8 @@
       <match/>
       <priority/>
       <name/>
+      <as/>
+      <visibility/>
     </xsl:variable>
     <xsl:sequence select="$container/*"/>
   </xsl:variable>
