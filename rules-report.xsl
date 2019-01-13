@@ -34,7 +34,7 @@
   </xsl:variable>
 
   <xsl:template match="/">
-    <xsl:copy-of select="$header"/>
+    <xsl:sequence select="$header"/>
     <xsl:apply-templates mode="row" select="/*/xsl:template"/>
   </xsl:template>
 
